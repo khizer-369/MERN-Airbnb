@@ -30,7 +30,7 @@ export const signUp = async (req, res) => {
     let token = await generateToken(createUser._id);
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENVIROMENT == "Production",
+      secure: true,
       sameSite: "strict",
       maxAge: 24 * 60 * 60 * 1000,
     });
@@ -78,7 +78,7 @@ export const login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "Production",
+      secure: true,
       sameSite: "strict",
       maxAge: 24 * 60 * 60 * 1000,
     });
@@ -118,16 +118,6 @@ export const getUser = async (req, res) => {
     }
 
     res.status(200).json(getUser);
-  } catch (error) {
-    res.status(500).json({ message: "Server Error" });
-    console.log(error);
-  }
-};
-
-export const allUsers = async (req, res) => {
-  try {
-    let allUsers = await User.find();
-    res.status(200).json(allUsers);
   } catch (error) {
     res.status(500).json({ message: "Server Error" });
     console.log(error);

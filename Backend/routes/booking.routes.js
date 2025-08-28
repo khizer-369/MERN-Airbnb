@@ -12,6 +12,4 @@ bookingRouter.post("/booking/:id", auth, booking);
 
 bookingRouter.delete("/cancel-booking/:id", auth, cancelBooking);
 
-bookingRouter.get("/all-booking", getBooking);
-
 export default bookingRouter;

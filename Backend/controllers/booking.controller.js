@@ -218,13 +218,3 @@ export const cancelBooking = async (req, res) => {
     return res.status(500).json({ message: "Server Error" });
   }
 };
-
-export const getBooking = async (req, res) => {
-  try {
-    let allBooking = await Booking.find();
-    return res.status(200).json(allBooking);
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: "Server Error" });
-  }
-};
