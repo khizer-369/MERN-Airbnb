@@ -18,6 +18,4 @@ userRouter.post("/log-out", logOut);
 
 userRouter.post("/get-user", auth, getUser);
 
-userRouter.get("/all-users", allUsers);
-
 export default userRouter;
