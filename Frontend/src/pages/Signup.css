@@ -1,0 +1,25 @@
+.sign-up-container {
+  height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-container form {
+  height: 80%;
+  width: 435px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #ff385c;
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 450px) {
+  .sign-up-container form{
+    height: 480px;
+    width: 95%;
+  }
+}
+

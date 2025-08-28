@@ -1,0 +1,96 @@
+.nav-bar-container {
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(225, 224, 224);
+  background-color: #f8f8f8;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.nav-bar-nav {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.nav-bar-nav:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.hamburger-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  border-radius: 6px;
+  z-index: 999;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li div {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li div:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-bar-right-side{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 150px;
+}
+
+.empty-profile-image{
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-image: url("../NavBar/emptyProfileImage.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.user-name{
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff385c;
+  color: #f0f0f0;
+  font-size: 25px;
+  cursor: pointer;
+}
