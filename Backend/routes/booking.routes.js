@@ -3,7 +3,6 @@ import auth from "../middlewares/auth.js";
 import {
   booking,
   cancelBooking,
-  getBooking,
 } from "../controllers/booking.controller.js";
 
 const bookingRouter = express.Router();
