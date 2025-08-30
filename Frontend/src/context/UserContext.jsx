@@ -5,7 +5,7 @@ import axios from "axios";
 export const DataContext = createContext();
 
 const UserContext = ({ children }) => {
-  const serverUrl = "http://localhost:3000/api";
+  const serverUrl = "https://mern-airbnb-eight.vercel.app/api";
   const [userData, setUserData] = useState();
 
   const getUser = () => {
