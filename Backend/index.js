@@ -8,10 +8,14 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 dotenv.config();
-const app = express();
-const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: "https://mern-airbnb-frontend.vercel.app", credentials: true }));
+const app = express();
+
+app.use(cors({
+  origin: "https://mern-airbnb-frontend.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -20,14 +24,10 @@ app.use("/api", userRouter);
 app.use("/api", listingRouter);
 app.use("/api", bookingRouter);
 
-// MongoDB se connect karna aur phir server start karna
+// database connection (without app.listen)
 mongoose.connect(process.env.MONGODB_URL)
-  .then(() => {
-    console.log("✅ Database Connected!");
-    app.listen(PORT, () => {
-      console.log(`🚀 Server is running on port ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.error("❌ MongoDB Connection Failed:", err.message);
-  });
+  .then(() => console.log("✅ Database Connected!"))
+  .catch((err) => console.error("❌ MongoDB Connection Failed:", err.message));
+
+// 👇 IMPORTANT
+export default app;
